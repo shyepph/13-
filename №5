@@ -1,0 +1,15 @@
+N = int(input("Введите количество предметов, которые можно учесть: "))
+values = list(map(int, input("Введите ценности предметов через пробел: ").split()))
+
+values.sort(reverse=True)
+max_value = 0
+count = 0
+
+for val in values:
+    if count < N:
+        max_value += val
+        count += 1
+    else:
+        break
+
+print(f"Максимальная сумма ценностей предметов, которые можно взять: {max_value}")
