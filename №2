@@ -1,0 +1,25 @@
+import random
+
+rows = 3
+cols = 4
+nested_list = [[random.randint(1, 100) for _ in range(cols)] for _ in range(rows)]
+
+print("Созданный вложенный список:")
+for row in nested_list:
+    print(row)
+
+total_sum = 0
+max_row_sum = -1
+row_index_with_max_sum = -1
+
+for i, row in enumerate(nested_list):
+    row_sum = 0
+    for value in row:
+        row_sum += value
+    total_sum += row_sum
+    if row_sum > max_row_sum:
+        max_row_sum = row_sum
+        row_index_with_max_sum = i
+
+print(f"Общая сумма всех элементов {total_sum}")
+print(f"Строка с максимальной суммой: {row_index_with_max_sum} (сумма {max_row_sum})")
